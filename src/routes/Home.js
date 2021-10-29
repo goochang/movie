@@ -19,7 +19,7 @@ class Home extends Component {
   
     render () {
       const { isLoading, movies} = this.state;
-      console.log(movies)
+      const location = this.props.location;
       return <section className="container">
         {isLoading ? 
         <div className="loader">
@@ -36,7 +36,8 @@ class Home extends Component {
                 year={movie.year}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
-                genres={movie.genres}/>
+                genres={movie.genres}
+                location={location}/>
               )
           })
         }
